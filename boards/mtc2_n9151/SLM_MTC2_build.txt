@@ -1,0 +1,311 @@
+ *  Executing task: nRF Connect: Build [pristine]: serial_lte_modem/build_MTC2 (active) 
+
+Building serial_lte_modem
+C:\WINDOWS\system32\cmd.exe /d /s /c "west build --build-dir c:/GTdev/serial_lte_modem/build_MTC2 c:/GTdev/serial_lte_modem --pristine --board mtc2n9151/nrf9151/ns --sysbuild -- -DBOARD_ROOT=c:/lq-mtc2;c:/gtdev/serial_lte_modem"
+
+-- west build: generating a build system
+Loading Zephyr module(s) (Zephyr base): sysbuild_default
+-- Found Python3: C:/ncs/toolchains/0b393f9e1b/opt/bin/python.exe (found suitable version "3.12.4", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: C:/ncs/v3.0.2/zephyr/.cache
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: mtc2n9151, qualifiers: nrf9151/ns
+Parsing C:/ncs/v3.0.2/zephyr/share/sysbuild/Kconfig
+Loaded configuration 'C:/GTdev/serial_lte_modem/build_MTC2/_sysbuild/empty.conf'
+Merged configuration 'c:/GTdev/serial_lte_modem/sysbuild.conf'
+Configuration saved to 'C:/GTdev/serial_lte_modem/build_MTC2/zephyr/.config'
+Kconfig header saved to 'C:/GTdev/serial_lte_modem/build_MTC2/_sysbuild/autoconf.h'
+-- 
+   *****************************
+   * Running CMake for mcuboot *
+   *****************************
+
+Loading Zephyr default modules (Zephyr base).
+-- Application: C:/ncs/v3.0.2/bootloader/mcuboot/boot/zephyr
+-- CMake version: 3.21.0
+-- Found Python3: C:/ncs/toolchains/0b393f9e1b/opt/bin/python.exe (found suitable version "3.12.4", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: C:/ncs/v3.0.2/zephyr/.cache
+-- Zephyr version: 4.0.99 (C:/ncs/v3.0.2/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: mtc2n9151, qualifiers: nrf9151
+-- Found host-tools: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found toolchain: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found Dtc: C:/ncs/toolchains/0b393f9e1b/opt/bin/dtc.exe (found suitable version "1.4.7", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/LQ-MTC2/boards/mtc2_n9151/mtc2n9151_nrf9151.dts
+-- Found devicetree overlay: C:/GTdev/serial_lte_modem/sysbuild/mcuboot/app.overlay
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/zephyr.dts
+-- Generated pickled edt: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/edt.pickle
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/dts.cmake
+
+warning: MBEDTLS_CFG_FILE (defined at C:/ncs/v3.0.2/bootloader/mcuboot/boot/zephyr/Kconfig:426,
+C:/ncs/v3.0.2/nrf\subsys\nrf_security/Kconfig:67, C:/ncs/v3.0.2/zephyr/modules/mbedtls/Kconfig:59,
+modules\mbedtls\Kconfig:59) was assigned the value 'mcuboot-mbedtls-cfg.h' but got the value ''. See
+http://docs.zephyrproject.org/latest/kconfig.html#CONFIG_MBEDTLS_CFG_FILE and/or look up
+MBEDTLS_CFG_FILE in the menuconfig/guiconfig interface. The Application Development Primer, Setting
+Configuration Values, and Kconfig - Tips and Best Practices sections of the manual might be helpful
+too.
+
+Parsing C:/ncs/v3.0.2/bootloader/mcuboot/boot/zephyr/Kconfig
+Loaded configuration 'C:/LQ-MTC2/boards/mtc2_n9151/mtc2n9151_nrf9151_defconfig'
+Merged configuration 'C:/GTdev/serial_lte_modem/sysbuild/mcuboot/prj.conf'
+Merged configuration 'C:/ncs/v3.0.2/nrf/modules/mcuboot/tfm.conf'
+Merged configuration 'C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/.config.sysbuild'
+Configuration saved to 'C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/.config'
+Kconfig header saved to 'C:/GTdev/serial_lte_modem/build_MTC2/mcuboot/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: c:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+CMake Warning at C:/ncs/v3.0.2/zephyr/CMakeLists.txt:1002 (message):
+  No SOURCES given to Zephyr library: drivers__console
+
+  Excluding target from build.
+
+
+MCUBoot bootloader key file: C:/ncs/v3.0.2/bootloader/mcuboot/root-ec-p256.pem
+CMake Warning at CMakeLists.txt:393 (message):
+  WARNING: Using default MCUboot signing key file, this file is for debug use
+  only and is not secure!
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GTdev/serial_lte_modem/build_MTC2/mcuboot
+-- 
+   **************************************
+   * Running CMake for serial_lte_modem *
+   **************************************
+
+Loading Zephyr default modules (Zephyr base).
+-- Application: C:/GTdev/serial_lte_modem
+-- CMake version: 3.21.0
+-- Found Python3: C:/ncs/toolchains/0b393f9e1b/opt/bin/python.exe (found suitable version "3.12.4", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: C:/ncs/v3.0.2/zephyr/.cache
+-- Zephyr version: 4.0.99 (C:/ncs/v3.0.2/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: mtc2n9151, qualifiers: nrf9151/ns
+-- Found host-tools: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found toolchain: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found Dtc: C:/ncs/toolchains/0b393f9e1b/opt/bin/dtc.exe (found suitable version "1.4.7", minimum required is "1.4.6") 
+-- Found BOARD.dts: C:/LQ-MTC2/boards/mtc2_n9151/mtc2n9151_nrf9151_ns.dts
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/zephyr.dts
+-- Generated pickled edt: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/edt.pickle
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/dts.cmake
+
+warning: Experimental symbol TFTP_LIB is enabled.
+
+Parsing C:/GTdev/serial_lte_modem/Kconfig
+Loaded configuration 'C:/LQ-MTC2/boards/mtc2_n9151/mtc2n9151_nrf9151_ns_defconfig'
+Merged configuration 'C:/GTdev/serial_lte_modem/prj.conf'
+Merged configuration 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/.config.sysbuild'
+Configuration saved to 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/.config'
+Kconfig header saved to 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr/autoconf.h'
+-- Found GnuLd: c:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/arm-zephyr-eabi/bin/ld.bfd.exe (found version "2.38") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+=========== Generating psa_crypto_config ===============
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Backup: CONFIG_MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT: False
+Backup: CONFIG_MBEDTLS_THREADING: False
+Backup: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== Checkpoint: backup ===============
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Restore: CONFIG_MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT: False
+Restore: CONFIG_MBEDTLS_THREADING: False
+Restore: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== End psa_crypto_config ===============
+=========== Generating psa_crypto_library_config ===============
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Backup: CONFIG_MBEDTLS_USE_PSA_CRYPTO: True
+Backup: CONFIG_MBEDTLS_PLATFORM_PRINTF_ALT: False
+Backup: CONFIG_MBEDTLS_THREADING: False
+Backup: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== Checkpoint: backup ===============
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Restore: CONFIG_MBEDTLS_USE_PSA_CRYPTO: True
+Restore: CONFIG_MBEDTLS_PLATFORM_PRINTF_ALT: False
+Restore: CONFIG_MBEDTLS_THREADING: False
+Restore: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== End psa_crypto_library_config ===============
+-- Including signing script: C:/ncs/v3.0.2/nrf/cmake/sysbuild/image_signing.cmake
+CMake Warning at C:/ncs/v3.0.2/zephyr/CMakeLists.txt:2180 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem
+CMake Warning at C:/ncs/v3.0.2/nrf/cmake/sysbuild/partition_manager.cmake:121 (message):
+  
+
+        ---------------------------------------------------------------------
+        --- WARNING: Using a bootloader without pm_static.yml.            ---
+        --- There are cases where a deployed product can consist of       ---
+        --- multiple images, and only a subset of these images can be     ---
+        --- upgraded through a firmware update mechanism. In such cases,  ---
+        --- the upgradable images must have partitions that are static    ---
+        --- and are matching the partition map used by the bootloader     ---
+        --- programmed onto the device.                                   ---
+        ---------------------------------------------------------------------
+        
+
+Call Stack (most recent call first):
+  C:/ncs/v3.0.2/nrf/cmake/sysbuild/partition_manager.cmake:620 (partition_manager)
+  C:/ncs/v3.0.2/nrf/sysbuild/CMakeLists.txt:779 (include)
+  cmake/modules/sysbuild_extensions.cmake:583 (nrf_POST_CMAKE)
+  cmake/modules/sysbuild_extensions.cmake:583 (cmake_language)
+  cmake/modules/sysbuild_images.cmake:46 (sysbuild_module_call)
+  cmake/modules/sysbuild_default.cmake:21 (include)
+  C:/ncs/v3.0.2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:75 (include)
+  C:/ncs/v3.0.2/zephyr/share/zephyr-package/cmake/ZephyrConfig.cmake:92 (include_boilerplate)
+  C:/ncs/v3.0.2/zephyr/share/sysbuild-package/cmake/SysbuildConfig.cmake:8 (include)
+  template/CMakeLists.txt:10 (find_package)
+
+
+Dropping partition 'nrf_modem_lib_trace' since its size is 0.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GTdev/serial_lte_modem/build_MTC2
+-- west build: building application
+[0/1] Re-running CMake...
+Loading Zephyr default modules (Zephyr base (cached)).
+-- Application: C:/GTdev/serial_lte_modem
+-- CMake version: 3.21.0
+-- Cache files will be written to: C:/ncs/v3.0.2/zephyr/.cache
+-- Zephyr version: 4.0.99 (C:/ncs/v3.0.2/zephyr)
+-- Found west (found suitable version "1.2.0", minimum required is "0.14.0")
+-- Board: mtc2n9151, qualifiers: nrf9151/ns
+-- Found host-tools: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found toolchain: zephyr 0.17.0 (C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk)
+-- Found BOARD.dts: C:/LQ-MTC2/boards/mtc2_n9151/mtc2n9151_nrf9151_ns.dts
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/zephyr.dts
+-- Generated pickled edt: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/edt.pickle
+-- Generated zephyr.dts: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/zephyr.dts
+-- Generated devicetree_generated.h: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr/devicetree_generated.h
+-- Including generated dts.cmake file: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/dts.cmake
+
+warning: Experimental symbol TFTP_LIB is enabled.
+
+Parsing C:/GTdev/serial_lte_modem/Kconfig
+Loaded configuration 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/.config'
+Merged configuration 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/.config.sysbuild'
+No change to configuration in 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/.config'
+No change to Kconfig header in 'C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr/autoconf.h'
+=========== Generating psa_crypto_config ===============
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Backup: CONFIG_MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT: False
+Backup: CONFIG_MBEDTLS_THREADING: False
+Backup: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== Checkpoint: backup ===============
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Restore: CONFIG_MBEDTLS_PLATFORM_SETUP_TEARDOWN_ALT: False
+Restore: CONFIG_MBEDTLS_THREADING: False
+Restore: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== End psa_crypto_config ===============
+=========== Generating psa_crypto_library_config ===============
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Backup: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Backup: CONFIG_MBEDTLS_USE_PSA_CRYPTO: True
+Backup: CONFIG_MBEDTLS_PLATFORM_PRINTF_ALT: False
+Backup: CONFIG_MBEDTLS_THREADING: False
+Backup: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== Checkpoint: backup ===============
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_C: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_KEY_ID_ENCODES_OWNER: False
+Restore: CONFIG_MBEDTLS_PSA_CRYPTO_SPM: False
+Restore: CONFIG_MBEDTLS_USE_PSA_CRYPTO: True
+Restore: CONFIG_MBEDTLS_PLATFORM_PRINTF_ALT: False
+Restore: CONFIG_MBEDTLS_THREADING: False
+Restore: CONFIG_MBEDTLS_THREADING_ALT: False
+=========== End psa_crypto_library_config ===============
+-- Including signing script: C:/ncs/v3.0.2/nrf/cmake/sysbuild/image_signing.cmake
+CMake Warning at C:/ncs/v3.0.2/zephyr/CMakeLists.txt:2180 (message):
+  __ASSERT() statements are globally ENABLED
+
+
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem
+[4/412] Generating include/generated/zephyr/version.h
+-- Zephyr version: 4.0.99 (C:/ncs/v3.0.2/zephyr), build: v4.0.99-ncs1-2
+[10/412] Generating ../../tfm/CMakeCache.txt
+-- Found Git: C:/ncs/toolchains/0b393f9e1b/mingw64/bin/git.exe (found version "2.37.3.windows.1") 
+-- The C compiler identification is GNU 12.2.0
+-- The CXX compiler identification is GNU 12.2.0
+-- The ASM compiler identification is GNU
+-- Found assembler: C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/bin/arm-zephyr-eabi-gcc.exe
+-- Found Python3: C:/ncs/toolchains/0b393f9e1b/opt/bin/python.exe (found version "3.12.4") found components: Interpreter 
+-- Found Python3: C:/ncs/toolchains/0b393f9e1b/opt/bin/python.exe (found suitable version "3.12.4", minimum required is "3.10") found components: Interpreter 
+-- Cache files will be written to: C:/ncs/v3.0.2/zephyr/.cache
+-- Configuring done
+-- Generating done
+-- Build files have been written to: C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/tfm
+[131/135] Linking C executable bin\tfm_s.axf
+Memory region         Used Size  Region Size  %age Used
+           FLASH:       31536 B      32256 B     97.77%
+             RAM:       10284 B        32 KB     31.38%
+[17/412] Performing install step for 'tfm'
+-- Install configuration: "MinSizeRel"
+----- Installing platform NS -----
+[79/412] Building C object CMakeFiles/app.dir/src/slm_uart_handler.c.obj
+FAILED: CMakeFiles/app.dir/src/slm_uart_handler.c.obj 
+C:\ncs\toolchains\0b393f9e1b\opt\zephyr-sdk\arm-zephyr-eabi\bin\arm-zephyr-eabi-gcc.exe -DEXT_API_MAGIC=0x281ee6de,0xb845acea,23298 -DFIRMWARE_INFO_MAGIC=0x281ee6de,0x8fcebb4c,23298 -DKERNEL -DK_HEAP_MEM_POOL_SIZE=16384 -DMBEDTLS_CONFIG_FILE=\"nrf-config.h\" -DMBEDTLS_PSA_CRYPTO_CONFIG_FILE=\"nrf-psa-crypto-config.h\" -DNRF9120_XXAA -DNRF_SKIP_FICR_NS_COPY_TO_RAM -DNRF_TRUSTZONE_NONSECURE -DPICOLIBC_DOUBLE_PRINTF_SCANF -DTFM_PSA_API -DUSE_PARTITION_MANAGER=1 -D__LINUX_ERRNO_EXTENSIONS__ -D__PROGRAM_START -D__ZEPHYR__=1 -IC:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr -IC:/ncs/v3.0.2/zephyr/include -IC:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated -IC:/ncs/v3.0.2/zephyr/soc/nordic -IC:/ncs/v3.0.2/zephyr/soc/nordic/nrf91/. -IC:/ncs/v3.0.2/zephyr/soc/nordic/common/. -IC:/ncs/v3.0.2/zephyr/subsys/net/ip -IC:/ncs/v3.0.2/zephyr/subsys/settings/include -IC:/ncs/v3.0.2/nrf/include -IC:/ncs/v3.0.2/nrf/lib/at_parser/include -IC:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/tfm/api_ns/interface/include -IC:/ncs/v3.0.2/nrf/subsys/net/lib/nrf_cloud/./include -IC:/ncs/v3.0.2/nrf/subsys/net/lib/nrf_cloud/coap/include -IC:/ncs/v3.0.2/nrf/subsys/net/lib/downloader/./include -IC:/ncs/v3.0.2/nrf/subsys/net/lib/fota_download/./include -IC:/ncs/v3.0.2/nrf/subsys/net/lib/downloader/include -IC:/ncs/v3.0.2/nrf/subsys/settings/include -IC:/ncs/v3.0.2/nrf/modules/trusted-firmware-m/. -IC:/ncs/v3.0.2/nrf/include/tfm -IC:/ncs/v3.0.2/nrf/tests/include -IC:/ncs/v3.0.2/modules/lib/cjson -IC:/ncs/v3.0.2/nrf/modules/cjson/include -IC:/ncs/v3.0.2/modules/hal/cmsis/CMSIS/Core/Include -IC:/ncs/v3.0.2/zephyr/modules/cmsis/. -IC:/ncs/v3.0.2/nrf/modules/hal_nordic/. -IC:/ncs/v3.0.2/modules/hal/nordic/nrfx -IC:/ncs/v3.0.2/modules/hal/nordic/nrfx/drivers/include -IC:/ncs/v3.0.2/modules/hal/nordic/nrfx/mdk -IC:/ncs/v3.0.2/zephyr/modules/hal_nordic/nrfx/. -IC:/ncs/v3.0.2/modules/debug/segger/SEGGER -IC:/ncs/v3.0.2/modules/debug/segger/Config -IC:/ncs/v3.0.2/nrfxlib/nrf_modem/include -IC:/GTdev/serial_lte_modem/src/gnss/. -IC:/GTdev/serial_lte_modem/src/nrfcloud/. -IC:/GTdev/serial_lte_modem/src/mqtt_c/. -IC:/GTdev/serial_lte_modem/src/http_c/. -IC:/GTdev/serial_lte_modem/src/twi/. -IC:/GTdev/serial_lte_modem/src/gpio/. -IC:/GTdev/serial_lte_modem/src/ftp_c/. -IC:/GTdev/serial_lte_modem/src -IC:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/generated/interface_nrf_security_psa -IC:/ncs/v3.0.2/nrf/subsys/nrf_security/include -IC:/ncs/v3.0.2/modules/crypto/oberon-psa-crypto/include -IC:/ncs/v3.0.2/nrf/subsys/nrf_security/src/utils -IC:/ncs/v3.0.2/modules/crypto/oberon-psa-crypto/library -IC:/ncs/v3.0.2/modules/crypto/mbedtls/library -IC:/ncs/v3.0.2/modules/crypto/mbedtls/include -IC:/ncs/v3.0.2/modules/crypto/mbedtls/include/library -IC:/ncs/v3.0.2/nrfxlib/crypto/nrf_oberon/include -IC:/ncs/v3.0.2/nrfxlib/crypto/nrf_oberon/include/mbedtls -isystem C:/ncs/v3.0.2/zephyr/lib/libc/common/include -fno-strict-aliasing -Os -imacros C:/GTdev/serial_lte_modem/build_MTC2/serial_lte_modem/zephyr/include/generated/zephyr/autoconf.h -fno-common -g -gdwarf-4 -fdiagnostics-color=always -mcpu=cortex-m33 -mthumb -mabi=aapcs -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mfp16-format=ieee -mtp=soft --sysroot=C:/ncs/toolchains/0b393f9e1b/opt/zephyr-sdk/arm-zephyr-eabi/arm-zephyr-eabi -imacros C:/ncs/v3.0.2/zephyr/include/zephyr/toolchain/zephyr_stdint.h -Wall -Wformat -Wformat-security -Wno-format-zero-length -Wdouble-promotion -Wno-pointer-sign -Wpointer-arith -Wexpansion-to-defined -Wno-unused-but-set-variable -Werror=implicit-int -fno-pic -fno-pie -fno-asynchronous-unwind-tables -ftls-model=local-exec -fno-reorder-functions --param=min-pagesize=0 -fno-defer-pop -fmacro-prefix-map=C:/GTdev/serial_lte_modem=CMAKE_SOURCE_DIR -fmacro-prefix-map=C:/ncs/v3.0.2/zephyr=ZEPHYR_BASE -fmacro-prefix-map=C:/ncs/v3.0.2=WEST_TOPDIR -ffunction-sections -fdata-sections -specs=picolibc.specs -D_POSIX_THREADS -std=c99 -MD -MT CMakeFiles/app.dir/src/slm_uart_handler.c.obj -MF CMakeFiles\app.dir\src\slm_uart_handler.c.obj.d -o CMakeFiles/app.dir/src/slm_uart_handler.c.obj -c C:/GTdev/serial_lte_modem/src/slm_uart_handler.c
+In file included from C:/ncs/v3.0.2/zephyr/include/zephyr/toolchain/gcc.h:98,
+                 from C:/ncs/v3.0.2/zephyr/include/zephyr/toolchain.h:50,
+                 from C:/ncs/v3.0.2/zephyr/include/zephyr/kernel_includes.h:23,
+                 from C:/ncs/v3.0.2/zephyr/include/zephyr/kernel.h:17,
+                 from C:/GTdev/serial_lte_modem/src/slm_uart_handler.c:7:
+C:/ncs/v3.0.2/zephyr/include/zephyr/device.h:96:41: error: '__device_dts_ord_DT_CHOSEN_ncs_slm_uart_ORD' undeclared here (not in a function)
+   96 | #define DEVICE_NAME_GET(dev_id) _CONCAT(__device_, dev_id)
+      |                                         ^~~~~~~~~
+C:/ncs/v3.0.2/zephyr/include/zephyr/toolchain/common.h:137:26: note: in definition of macro '_DO_CONCAT'
+  137 | #define _DO_CONCAT(x, y) x ## y
+      |                          ^
+C:/ncs/v3.0.2/zephyr/include/zephyr/device.h:96:33: note: in expansion of macro '_CONCAT'
+   96 | #define DEVICE_NAME_GET(dev_id) _CONCAT(__device_, dev_id)
+      |                                 ^~~~~~~
+C:/ncs/v3.0.2/zephyr/include/zephyr/device.h:237:37: note: in expansion of macro 'DEVICE_NAME_GET'
+  237 | #define DEVICE_DT_NAME_GET(node_id) DEVICE_NAME_GET(Z_DEVICE_DT_DEV_ID(node_id))
+      |                                     ^~~~~~~~~~~~~~~
+C:/ncs/v3.0.2/zephyr/include/zephyr/device.h:254:34: note: in expansion of macro 'DEVICE_DT_NAME_GET'
+  254 | #define DEVICE_DT_GET(node_id) (&DEVICE_DT_NAME_GET(node_id))
+      |                                  ^~~~~~~~~~~~~~~~~~
+C:/GTdev/serial_lte_modem/src/slm_uart_handler.c:23:43: note: in expansion of macro 'DEVICE_DT_GET'
+   23 | const struct device *const slm_uart_dev = DEVICE_DT_GET(DT_CHOSEN(ncs_slm_uart));
+      |                                           ^~~~~~~~~~~~~
+[84/412] Building C object CMakeFiles/app.dir/src/main.c.obj
+C:/GTdev/serial_lte_modem/src/main.c:50:13: warning: 'power_pin_callback_wakeup' declared 'static' but never defined [-Wunused-function]
+   50 | static void power_pin_callback_wakeup(const struct device *dev,
+      |             ^~~~~~~~~~~~~~~~~~~~~~~~~
+C:/GTdev/serial_lte_modem/src/main.c:46:17: warning: 'callback_wakeup_running' defined but not used [-Wunused-variable]
+   46 | static atomic_t callback_wakeup_running;
+      |                 ^~~~~~~~~~~~~~~~~~~~~~~
+[96/412] Building C object CMakeFiles/app.dir/src/slm_at_socket.c.obj
+ninja: build stopped: subcommand failed.
+[10/20] No configure step for 'mcuboot'
+FAILED: _sysbuild/sysbuild/images/serial_lte_modem-prefix/src/serial_lte_modem-stamp/serial_lte_modem-build C:/GTdev/serial_lte_modem/build_MTC2/_sysbuild/sysbuild/images/serial_lte_modem-prefix/src/serial_lte_modem-stamp/serial_lte_modem-build 
+cmd.exe /C "cd /D C:\GTdev\serial_lte_modem\build_MTC2\serial_lte_modem && C:\ncs\toolchains\0b393f9e1b\opt\bin\cmake.exe --build ."
+ninja: build stopped: subcommand failed.
+FATAL ERROR: command exited with status 1: 'C:\ncs\toolchains\0b393f9e1b\opt\bin\cmake.EXE' --build C:/GTdev/serial_lte_modem/build_MTC2
+
+ *  The terminal process terminated with exit code: 1. 
+ *  Terminal will be reused by tasks, press any key to close it. 

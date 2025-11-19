@@ -1,0 +1,31 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# Copyright (c) 2025 LooUQ Incorporated
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig RGBI
+	bool "RGB Indicator device drivers"
+	help
+	  This option enables the rgbi custom driver class.
+
+if RGBI
+
+config RGBI_INIT_PRIORITY
+	int "RGB Indicator device drivers init priority"
+	# default KERNEL_INIT_PRIORITY_DEVICE
+    default 95
+	help
+	  RGBI device drivers init priority.
+
+module = RGBI
+module-str = rgbi
+source "subsys/logging/Kconfig.template.log_config"
+
+config RGBI_SPI_WS2812
+	bool "SPI-controlled WS2812 RGB LED"
+	default y
+	depends on DT_HAS_RGBI_SPI_WS2812_ENABLED
+	select SPI
+	help
+	  Enable this option to use the SPI-WS2812 RGB LED driver. 
+
+endif # RGBI

@@ -1,0 +1,34 @@
+description: |
+  The MTC.2 interface utilizes a Device Select pin, similar to SPI-CS, to multiplex 
+  multiple slave shield boards. MTC.2 devices have a Device Select (dvcselect) input
+  on pin 3 of the M.2 connector. When dvcselect is active (HIGH) this enables the 
+  host/shield communications.
+
+  For systems with multiple shields (slave/peripheral devices) the host system board
+  typically has a I2C/GPIO expander that sources dvcselect. Alternately the host could 
+  dedicate one or more GPIO pins to select peripheral shields. If assigning GPIO pins
+  to dvcselect function
+  
+
+compatible: "loouq-mtc2,master-dvcselect"
+
+include: base.yaml
+
+child-binding:
+  description: Shield/peripheral device select child node
+  properties:
+    gpios:
+      type: phandle-array
+      required: true
+    label:
+      type: string
+      description: |
+        Human readable string describing the shield/peripheral being controlled.
+
+# properties:
+
+#   gpios:
+#     type: phandle-array
+#     required: true
+#     description: |
+#       GPIO to use as the host device select signal to select an individual shield.

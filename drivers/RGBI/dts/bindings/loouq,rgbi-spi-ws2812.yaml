@@ -1,0 +1,28 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# Copyright (c) 2025 LooUQ Incorporated
+# SPDX-License-Identifier: Apache-2.0
+
+description: |
+  A binding for a SPI-controlled WS2812 RGB LED. 
+  
+  Example definition in devicetree:
+
+    loouq,rgbi-spi-ws2812 {
+        compatible = "rgbi-spi-ws2812";
+        ws2812 = <&ws2812>
+    };
+
+compatible: "rgbi-spi-ws2812"
+
+include: base.yaml
+
+properties:
+  ws2812-dev-id:
+    type: phandle
+    required: false
+    description: WS2812 RGB indicator LED.
+
+  test-val:
+    type: int
+    description: just testing
+

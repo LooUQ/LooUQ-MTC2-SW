@@ -1,0 +1,8 @@
+board:
+  name: mtc2n9151
+  full_name: MTC2-N9151
+  vendor: loouq
+  socs:
+  - name: nrf9151
+    variants:
+    - name: 'ns'
