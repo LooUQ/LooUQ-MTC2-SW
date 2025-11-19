@@ -11,6 +11,7 @@ LooUQ is still evaluating how to best pattern working with NCS and Zephyr. Curre
 
 ### Copying the repository
 You copy the repository however you would normally for any other Git repo. Again... recommend it go into the NCS top-level folder above your installed SDK versions.
+
 ![screenshot](images/ncs_folder.png)
 
 Non-Image content-type returned
