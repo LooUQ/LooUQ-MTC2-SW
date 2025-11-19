@@ -14,7 +14,6 @@ You copy the repository however you would normally for any other Git repo. Again
 
 ![screenshot](images/ncs_folder.png)
 
-Non-Image content-type returned
 ### Adding to the board root
 Since the NCS extension doesn't know about ***out-of-tree*** resources, we have to tell it about the LooUQ boards. This is done once, in VS Code settings.
 * Open Settings in VS Code
