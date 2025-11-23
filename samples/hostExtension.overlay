@@ -1,0 +1,92 @@
+/*
+ * Copyright (c) 2020, Nordic Semiconductor ASA
+ * Copyright (c) 2025, LooUQ Incorporated
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* LooUQ Host Extension HX interface 
+ * Many LooUQ boards that use the MTC2-N9151 modem have
+ * peripheral componets for sensor/indicator functions.
+ * This connectivity is via the HX I2C3 bus.
+ */
+
+/*
+ * LQnode ISense (optional) device provides a base level of
+ * environmental sensing by incorporating two sensor chips:
+ * a Bosch BMP581 (temperature, humidity, pressure) and a 
+ * STMicroelectronics ISM330DHCX (3-axis accelerometer and 
+ * 3-axis gyroscope). 
+ *
+ * Both sensors are connected via the LQnode HX (host-extension)
+ * I2C bus. The ISense plugs into the LQnode system board via a
+ * pair of 4-pin headers (header connector is NOT polarized,
+ * take care inserting the ISense into the LQnode).
+ */
+
+
+&i2c3 {
+	status = "okay";
+
+    /*
+     * RGB LED driven by TI-LP5817 
+     * Device address 0x2D (fixed addr)
+     */
+    rgb_indicator: rgbled@2d {
+        compatible = "i2c-device";
+        reg = <0x2D>;
+    };
+
+    /*
+     * BMP581 - temperature, humidity, pressure
+     * Device address 0x46 (addr pin tied to ground)
+     * 
+     * BMP to operate in FORCED mode (polled) since environment values
+     * move slowly and the interrupt pin is not connected.
+     */
+    isense_bmp: bmp581@46 {
+		compatible = "bosch,bmp581";
+		reg = <0x46>;
+	};
+
+    /*
+     * ISM330 - 3-axis accelerometer/gyroscope
+     * Device address 0x6A (addr pin tied to ground)
+     */
+    isense_ism: ism330@6a {
+        compatible = "st,ism330dhcx";
+        reg = <0x6A>;
+    };
+};
+
+
+/ {
+    hx-i2c {
+        compatible = "gpio-leds";
+        status = "disabled";
+
+        hx_sda: hxsda {
+            gpios = <&gpio0 31 GPIO_ACTIVE_HIGH>
+        };
+        hx_scl: hxscl {
+            gpios = <&gpio0 30 GPIO_ACTIVE_HIGH>
+        };
+    };
+};
+
+
+// / {
+//     buttons {
+// 		compatible = "gpio-keys";
+// 		button0: button_0 {
+// 			gpios = <&gpio0 6 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+// 			label = "Power good sense (logical)";
+// 			zephyr,code = <INPUT_KEY_0>;
+// 		};
+//     };
+//     aliases {
+//         rgb-led = &led_strip;
+//         level-test = &led0;
+//     };
+// };
+
