@@ -17,26 +17,19 @@
 		zephyr,uart-mcumgr = &uart0;
 	};
 
-	pwmleds {
-		compatible = "pwm-leds";
-		pwm_led0: pwm_led_0 {
-			pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
-		};
-	};
+	// pwmleds {
+	// 	compatible = "pwm-leds";
+	// 	pwm_led0: pwm_led_0 {
+	// 		pwms = <&pwm0 0 PWM_MSEC(20) PWM_POLARITY_NORMAL>;
+	// 	};
+	// };
 
-    aliases {
-        host-extension = &i2c3;
-        host-ext = &i2c3;
-    };
-
+    // aliases {
+    //     host-extension = &i2c3;
+    //     host-ext = &i2c3;
+    // };
 };
 
-&pwm0 {
-	status = "okay";
-	pinctrl-0 = <&pwm0_default>;
-	pinctrl-1 = <&pwm0_sleep>;
-	pinctrl-names = "default", "sleep";
-};
 
 &adc {
 	status = "okay";
@@ -50,6 +43,7 @@
 	status = "okay";
 };
 
+/* Application UART */
 &uart0 {
 	status = "okay";
 	current-speed = <115200>;
@@ -57,6 +51,14 @@
 	pinctrl-1 = <&uart0_sleep>;
 	pinctrl-names = "default", "sleep";
 };
+
+// &pwm0 {
+// 	status = "okay";
+// 	pinctrl-0 = <&pwm0_default>;
+// 	pinctrl-1 = <&pwm0_sleep>;
+// 	pinctrl-names = "default", "sleep";
+// };
+
 
 /* Application SPI */
 &spi1 {
@@ -68,22 +70,24 @@
 	pinctrl-names = "default", "sleep";
 };
 
+
+/* Application I2C */
 &i2c2 {
    	compatible = "nordic,nrf-twim";
 	status = "okay";
+	clock-frequency = <I2C_BITRATE_STANDARD>;
 	pinctrl-0 = <&i2c2_default>;
 	pinctrl-1 = <&i2c2_sleep>;
 	pinctrl-names = "default", "sleep";
-	clock-frequency = <I2C_BITRATE_FAST>;
 };
 
-/* Host Extension I2C pins: supports 
- * RGB LED indicator and peripheral MTC2 multiplexor
- */
+
+/* Host Extension I2C */
+/* Supports various LooUQ host features like RGB indicator and host MTC2 board multiplexor */
 &i2c3 {
  	compatible = "nordic,nrf-twim";
  	status = "okay";
-    clock-frequency = <I2C_BITRATE_FAST>;
+    clock-frequency = <I2C_BITRATE_STANDARD>;           // most LooUQ boards have a TI LP5817 RGB-LED controller, it only supports STANDARD clock (100kHz)
 
 	pinctrl-0 = <&i2c3_default>;
 	pinctrl-1 = <&i2c3_sleep>;
@@ -91,14 +95,12 @@
 };
 
 
-/* Include default memory partition configuration file
-   NOTE: the location changed in NCS version 3.1.0 (and after)
-   <your_ncs>\v3.0.2\zephyr\dts\common\nordic 
-   was moved to
-   <your_ncs>\v3.1.1\zephyr\dts\vendor\nordic
+/* Include default memory partition configuration file */
+#include <nordic/nrf91xx_partition.dtsi>
+
+/* NOTE: the location changed in NCS version 3.1.0 (and later versions)
+ * <your_ncs>\v3.0.2\zephyr\dts\common\nordic CHANGED TO <your_ncs>\v3.1.1\zephyr\dts\vendor\nordic
+ *
+ *  If you are developing with SDK v3.0.2 or below comment partition reference above and uncomment below
 */
-#if __has_include("common/nordic/nrf91xx_partition.dtsi")
-    #include <common/nordic/nrf91xx_partition.dtsi>
-#else
-    #include <vendor/nordic/nrf91xx_partition.dtsi>
-#endif
+//#include <common/nordic/nrf91xx_partition.dtsi>
