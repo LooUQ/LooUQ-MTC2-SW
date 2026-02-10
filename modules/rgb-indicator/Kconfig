@@ -1,0 +1,17 @@
+# Copyright (c) 2024 Nordic Semiconductor ASA
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig RGBINDICATOR
+	bool "RGB Indicator device drivers"
+	help
+	  This option enables the RGB indicator custom driver class.
+
+if RGBINDICATOR
+
+module = RGBINDICATOR
+module-str = rgbindicator0
+source "subsys/logging/Kconfig.template.log_config"
+
+# rsource "Kconfig.gpio_led"
+
+endif # RGBINDICATOR

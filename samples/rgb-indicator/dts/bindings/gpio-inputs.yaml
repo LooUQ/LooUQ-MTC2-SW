@@ -1,0 +1,21 @@
+# Copyright (c) 2018, Linaro Limited
+# SPDX-License-Identifier: Apache-2.0
+
+compatible: "gpio-inputs"
+description: |
+  Group of GPIO input nodes (switch input, data ready, etc.).
+
+child-binding:
+  description: GPIO input node
+
+  properties:
+    gpios:
+      type: phandle-array
+      required: true
+    label:
+      required: false
+      type: string
+      description: |
+        Human readable string describing the pin. It can be used by an
+        application to identify this pin or to retrieve its number/index
+        (i.e. child node number) on the parent device.

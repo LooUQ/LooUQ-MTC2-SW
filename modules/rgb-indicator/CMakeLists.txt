@@ -1,5 +1,5 @@
 # Copyright (c) 2021 Nordic Semiconductor ASA
 # SPDX-License-Identifier: Apache-2.0
 
-# Out-of-tree drivers for custom classes
-add_subdirectory_ifdef(CONFIG_RGBI rgbi)
+# zephyr_library()
+# zephyr_library_sources(rgb-indicator.c)
