@@ -5,7 +5,14 @@
  */
 
 /dts-v1/;
+/* SoC dtsi was renamed in NCS v3.3.1: nrf9151ns_laca -> nrf9151_ns_laca.
+ * Pick whichever the active SDK provides so this board builds on both.
+ */
+#if __has_include(<nordic/nrf9151_ns_laca.dtsi>)
+#include <nordic/nrf9151_ns_laca.dtsi>
+#else
 #include <nordic/nrf9151ns_laca.dtsi>
+#endif
 #include "mtc2n9151_nrf9151_common.dtsi"
 
 / {
